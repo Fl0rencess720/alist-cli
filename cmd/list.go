@@ -6,10 +6,11 @@ import (
 )
 
 var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "列举当前所处Alist目录下的所有文件",
-	Long:  `列举当前所处Alist目录下的所有文件`,
-	Run:   services.List,
+	Use:     "list",
+	Short:   "List contents of the current Alist directory",
+	Long:    `Lists all files and directories within the current working directory configured for the Alist server.`,
+	Example: `alist-cli list`,
+	Run:     services.List,
 }
 
 func init() {

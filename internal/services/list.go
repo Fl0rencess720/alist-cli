@@ -2,6 +2,7 @@ package services
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/Fl0rencess720/alist-cli/internal/httpclient"
 	"github.com/fatih/color"
@@ -22,7 +23,7 @@ func List(cmd *cobra.Command, args []string) {
 	})
 	if err != nil {
 		zap.L().Error("Failed to list files", zap.Error(err))
-		return
+		os.Exit(1)
 	}
 
 	items := req.Data.Content
